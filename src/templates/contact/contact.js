@@ -20,7 +20,7 @@ const Contact = () => {
 
     return(
         <Section>
-            <form onSubmit={handleSubmit} netlify>
+            <form onSubmit={handleSubmit} netlify="">
                 <label>
                     First Name:
                     <input name="firstname" type="text" />
