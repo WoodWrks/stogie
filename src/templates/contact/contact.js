@@ -29,17 +29,35 @@ const Contact = () => {
 
         let formData = new FormData();
 
-        formData.append('firstname', event.target.firstname.value);
-        formData.append('lastname', event.target.lastname.value);
-        formData.append('emailaddress', event.target.emailaddress.value);
-        formData.append('subject', event.target.subject.value);
-        formData.append('message', event.target.message.value);
         
-        fetch("/", {
+        formData.append('to', process.env.SERVERADMIN_EMAIL);
+        formData.append('from', event.target.emailaddress.value);
+        formData.append('subject', 'Website contact from: '+event.target.firstname.value+" "+event.target.lastname.value);
+        formData.append('parameters', {
+            'firstname':        event.target.firstname.value,
+            'lastname':         event.target.lastname.value,
+            'emailaddress' :    event.target.emailaddress.value,
+            'subject':          event.target.subject.value,
+            'message':          event.target.message.value,
+        });
+        
+        
+        fetch(`/.netlify/functions/emails/contact`, {
+            headers: {
+            "netlify-emails-secret": process.env.NETLIFY_EMAILS_SECRET,
+            },
             method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
             body: new URLSearchParams(formData).toString(),
-        })
+            // body: JSON.stringify({
+            // from: "",
+            // to: "",
+            // subject: "",
+            // parameters: {
+            //     firstname: ""
+            // },
+            // }),
+        }
+        )
         .then(() => console.log("Form successfully submitted"))
         .catch((error) => alert(error));
     }
