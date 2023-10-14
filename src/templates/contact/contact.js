@@ -27,8 +27,6 @@ const Contact = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        console.log(event.target.firstname.value);
-
         let formData = new FormData();
 
         formData.append('firstname', event.target.firstname.value);
@@ -36,8 +34,6 @@ const Contact = () => {
         formData.append('emailaddress', event.target.emailaddress.value);
         formData.append('subject', event.target.subject.value);
         formData.append('message', event.target.message.value);
-
-        console.log(formData);
         
         fetch("/", {
             method: "POST",
@@ -50,7 +46,8 @@ const Contact = () => {
 
     return(
         <Section>
-            <form ref={contactForm} onSubmit={handleSubmit} name="contact" method="POST" netlify="">
+            <form ref={contactForm} onSubmit={handleSubmit} name="contact" method="POST" data-netlify="true" netlify="">
+            <input type="hidden" name="form-name" value="contact" />
                 <FormRow>
                     <label>
                         First Name:
