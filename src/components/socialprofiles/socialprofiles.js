@@ -4,32 +4,33 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faInstagram } from "@fortawesome/free-brands-svg-icons";
 
 const List = styled.ul`
-  display:inline-block;
-  margin:var(--gutter-md) 0 0;
+  display:inline;
+  margin:0;
   padding:0;
+  height: ${ props => props.iconSize };
   li{
     list-style: none;
     display: inline;
+    height: ${ props => props.iconSize };
     padding-right:var(--gutter-sm);
     a{
       position: relative;
-      display: inline-block;
+      display: inline;
       color:var(--text-secondary);
-      padding-bottom:var(--gutter-xs);
       text-decoration:none;
       box-shadow: none;
       outline:none;
       svg{
-        height:var(--font-lg);
-        width:var(--font-lg);
+        height: ${ props => props.iconSize };
+        width: ${ props => props.iconSize };
         transform: scale(1);
         position: relative;
         color:var(--text-secondary);
       }
       &:hover, &:focus{
         svg{
-          transition:all 250ms;
-          transform: scale(1.1);
+          transition: all var(--durationSlow) var(--curveDecelerateMin);
+          transform: scale(1.02);
         }
         box-shadow: none;
       }
@@ -37,9 +38,9 @@ const List = styled.ul`
   }
 `
 
-const SocialProfiles = () => {
+const SocialProfiles = (props) => {
     return (
-      <List>
+      <List {...props}>
         <li><a className="social" href="https://www.instagram.com/gotschops/">
           <span className="sr-only">Gotschops profile on</span>
           <FontAwesomeIcon icon={faInstagram} size="2x" aria-hidden="true" title="Instagram" />

@@ -1,10 +1,16 @@
-import React from "react"
+import React, {useRef, useEffect} from "react";
 import styled from 'styled-components';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Button from "../../components/button";
 
-import CloseUp from '../../assets/images/craft-closeup.jpg';
+
+import ThreadedImage from '../../assets/images/threaded.png';
+import ThreadedMask from '../../assets/images/threaded-mask.png';
+import ThreadedBg from '../../assets/images/threaded-bg.png';
 
 const Section = styled.section`
+    position:relative;
     display:flex;
     margin: 0 auto;
     padding: 20vh 0;
@@ -35,23 +41,69 @@ const Right = styled.div`
     display:flex;
     flex: 1 0;
     justify-content:center;
-    img{
-        height:80%;
-        width:80%;
-    }
+`
+const ThreadedComp = styled.div`
+    position:relative;
+    height:60vh;
+    width:60vh;
+    overflow:hidden;
+`;
+const ThreadedLayer = styled.div`
+    position:absolute;
+    top:-10vh;
+    left:0;
+    right:0;
+    bottom:0;
+    background-size:auto 60vh;
+    background-repeat:none;
+`;
+const Mask = styled(ThreadedLayer)`
+    z-index:3;
+    background-image: url(${ThreadedMask});
+`
+const Thread = styled(ThreadedLayer)`
+    left:60vh;
+    z-index:2;
+    background-image: url(${ThreadedImage});
+`
+const Background = styled(ThreadedLayer)`
+    z-index:1;
+    background-image: url(${ThreadedBg});
 `
 
 const Craft = () => {
+    const ref = useRef(null);
+    gsap.registerPlugin(ScrollTrigger);
+
+    useEffect(() => {
+        const element = ref.current;
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: element,
+                start: "-10% center",
+                end: "50% center",
+                scrub: true,
+                markers: false
+            }
+        }).to(element.querySelector(".thread"),{
+            left:'0'
+        })
+    }, []);
+
     return(
-        <Section>
+        <Section ref={ref}>
             <Left>
                 <h2>CRAFT<br/>IS KING.</h2>
                 <p>Each piece is lathe turned, threaded, sanded, and polished by — wait for it — our hands.
     Production runs are currently limited to small batches.</p>
-                <Button>ORDER INQUIRY</Button>
+                <Button to="#" color="light">ORDER INQUIRY</Button>
             </Left>
             <Right>
-                <img src={CloseUp} />
+                <ThreadedComp>
+                <Mask className="mask"/>
+                <Thread className="thread"/>
+                <Background/>
+                </ThreadedComp>
             </Right>
         </Section>
     );

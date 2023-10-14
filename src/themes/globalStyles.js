@@ -68,6 +68,7 @@ export const GlobalVars = createGlobalStyle`
     --font-xl: 2.25rem;
     --font-xxl: 3rem;
     --font-xxxl: 5rem;
+    --font-xxxxl: 7rem;
 
     --gutter-xs:0.5rem;
     --gutter-sm:1rem;
@@ -100,10 +101,11 @@ export const GlobalVars = createGlobalStyle`
     --curveAccelerateMin: cubic-bezier(0.8,0,1,1);
     --curveDecelerateMax: cubic-bezier(0,0,0,1);
     --curveDecelerateMid: cubic-bezier(0.1,0.9,0.2,1);
-    --curveDecelerateMin: cubic-bezier(0.33,0,0.1,1);
+    --curveDecelerateMin: cubic-bezier(0,0,0.1,1);
     --curveEasyEaseMax: cubic-bezier(0.8,0,0.1,1);
     --curveEasyEase: cubic-bezier(0.33,0,0.67,1);
     --curveLinear: cubic-bezier(0,0,1,1);
+  
 
     --shadow2: 0 0 2px rgba(0, 0, 0,0.12); 0 1px 2px rgba(0, 0, 0,0.14);
     --shadow4: 0 0 2px rgba(0, 0, 0,0.12); 0 2px 4px rgba(0, 0, 0,0.14);
@@ -119,6 +121,9 @@ export const GlobalStyles = createGlobalStyle`
   html{
     font-size:var(--base-size);
     line-height: 1.5;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    overscroll-behavior: none;
   }
   html,body{margin:0;padding:0;}
   *, :before, :after {
@@ -157,7 +162,7 @@ export const GlobalStyles = createGlobalStyle`
     font-size:var(--font-md);
     font-weight:300;
   }
-  a{
+  a:not(.button){
     color: ${({ theme }) => theme.colorLinkRest};
     color: ${( {theme} ) => theme.neutralForeground1};
     text-decoration: none;

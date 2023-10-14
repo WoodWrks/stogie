@@ -9,9 +9,7 @@ const lightTheme = {
     neutralForeground1: 'rgba(0, 0, 0, 0.9)',
     neutralForeground2: 'rgba(0, 0, 0, 0.75)',
     neutralForeground3: 'rgba(0, 0, 0, 0.25)',
-    neutralForeground1OnBrand: 'rgba(255, 255, 255, 0.9)',
-    neutralForeground2OnBrand: 'rgba(255, 255, 255, 0.75)',
-    neutralForeground3OnBrand: 'rgba(255, 255, 255, 0.25)',
+
     neutralForegroundInverted1: 'rgba(255, 255, 255, 1.0)',
     neutralForegroundInverted2: 'rgba(255, 255, 255, 0.75)',
     //

@@ -1,5 +1,7 @@
-import React from "react"
+import React, {useRef, useEffect} from "react";
 import styled from 'styled-components';
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import stogieSVG from "../../assets/brand/stogie.svg";
 import blueBG from '../../assets/images/blue-bg.jpg';
@@ -40,19 +42,42 @@ const Logo = styled.div`
     justify-content:center;
     img{
         height:auto;
-        width:15vw;
+        width:20vw;
     }
 `
 const Product = () => {
+    const ref = useRef(null);
+    gsap.registerPlugin(ScrollTrigger);
+
+    useEffect(() => {
+        const element = ref.current;
+        gsap.set(element.querySelector(".logo"),{
+            opacity:0.0,
+            scale:0.4
+        })
+        gsap.timeline({
+            scrollTrigger: {
+                trigger: element,
+                start: "-10% center",
+                end: "70% center",
+                scrub: false,
+                markers: false
+            }
+        })
+        .to(element.querySelector(".logo"),{
+            opacity:1.0,
+            scale:1.0
+        })
+    }, []);
     return(
-        <Section>
-            <Logo>
+        <Section ref={ref}>
+            <Logo className="logo">
                 <img src={stogieSVG} />
             </Logo>
-            <Left>
+            <Left className="left">
                 <img src={greenProduct} />
             </Left>
-            <Right>
+            <Right className="right">
                 <img src={blueProduct} />
             </Right>
         </Section>

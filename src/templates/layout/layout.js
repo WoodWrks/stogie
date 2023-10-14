@@ -4,6 +4,7 @@ import {GlobalFonts,GlobalVars,GlobalStyles} from '../../themes/globalStyles';
 import Lenis from "@studio-freight/lenis";
 import lightTheme from "../../themes/lightTheme";
 import Header from "../../components/header";
+import Footer from "../footer";
 
 const LayoutStyled = styled.div`
   background: ${({theme}) => theme.neutralBackgroundInverted2};
@@ -30,6 +31,7 @@ const Layout = (props) => {
       <LayoutStyled className="layout" location={props.location}>
         <Header />
         {props.children}
+        <Footer />
       </LayoutStyled>
     </ThemeProvider>
   )

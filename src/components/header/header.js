@@ -6,7 +6,7 @@ import SocialProfiles from "../socialprofiles/socialprofiles";
 import logoSVG from '../../assets/brand/woodworks.svg';
 
 const HeaderStyled = styled.header`
-    position:fixed;
+    position:absolute;
     width:100%;
     padding: var(--gutter-md) var(--gutter-md) 0;
     display:flex;
@@ -27,9 +27,10 @@ const NavStyled = styled.nav`
     justify-content: right;
     color: ${( {theme} ) => theme.neutralForegroundInverted1};
     ul{
-        display:inline-block;
-        margin:var(--gutter-md) 0 0;
+        display:inline;
+        margin:0;
         padding:0;
+        align-items: center;
         li{
           list-style: none;
           display: inline;
@@ -77,7 +78,7 @@ const Header = () => {
                         <a href="/about">About</a>
                     </li>
                 </ul>
-                <SocialProfiles />
+                <SocialProfiles iconSize={'1.5rem'} />
             </NavStyled>
 
         </HeaderStyled>

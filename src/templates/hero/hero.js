@@ -1,7 +1,6 @@
 import React, {useRef, useEffect} from "react"
 import styled from "styled-components";
 import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
 
 import Divide from "../../components/divide";
 
@@ -47,7 +46,6 @@ const HeroStyled = styled.section`
 `;
 
 const Hero = () => {
-    gsap.registerPlugin(ScrollTrigger);
     const ref = useRef(null);
     useEffect(() => {
         const element = ref.current;
@@ -73,6 +71,23 @@ const Hero = () => {
             delay:1,
             ease: 'Circ.easeOut'
         })
+        // gsap.timeline({
+        //     scrollTrigger: {
+        //         trigger: element,
+        //         start: "80% center",
+        //         end: "150% center",
+        //         scrub: true,
+        //         markers: true
+        //     }
+        // })
+        // .to(element,{
+        //     opacity:0.0,
+        //     backgroundPosition: '50% 50%'
+        // })
+        // .to(element.querySelector("div"),{
+        //     opacity: 0.0,
+        //     x: "-50px",
+        // })
         
       }, []);
     return(
