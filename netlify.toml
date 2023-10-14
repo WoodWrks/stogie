@@ -1,3 +1,0 @@
-targetPort = 8080
-[[plugins]]
-  package = "@netlify/plugin-emails"
