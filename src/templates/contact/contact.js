@@ -26,36 +26,24 @@ const Contact = () => {
     const [message, setMessage] = useState('Please include me on the next order.');
     const handleSubmit = (event) => {
         event.preventDefault();
-
-        let formData = new FormData();
-
-        
-        formData.append('to', process.env.SERVERADMIN_EMAIL);
-        formData.append('from', event.target.emailaddress.value);
-        formData.append('subject', 'Website contact from: '+event.target.firstname.value+" "+event.target.lastname.value);
-        formData.append('parameters', {
-            'firstname':        event.target.firstname.value,
-            'lastname':         event.target.lastname.value,
-            'emailaddress' :    event.target.emailaddress.value,
-            'subject':          event.target.subject.value,
-            'message':          event.target.message.value,
-        });
-        
         
         fetch(`/.netlify/functions/emails/contact`, {
             headers: {
             "netlify-emails-secret": process.env.NETLIFY_EMAILS_SECRET,
             },
             method: "POST",
-            body: new URLSearchParams(formData).toString(),
-            // body: JSON.stringify({
-            // from: "",
-            // to: "",
-            // subject: "",
-            // parameters: {
-            //     firstname: ""
-            // },
-            // }),
+            body: JSON.stringify({
+                from: event.target.emailaddress.value,
+                to: process.env.SERVERADMIN_EMAIL,
+                subject: 'Website contact from: ' + event.target.firstname.value + " " + event.target.lastname.value,
+                parameters: {
+                    'firstname':        event.target.firstname.value,
+                    'lastname':         event.target.lastname.value,
+                    'emailaddress' :    event.target.emailaddress.value,
+                    'subject':          event.target.subject.value,
+                    'message':          event.target.message.value,
+                },
+            }),
         }
         )
         .then(() => console.log("Form successfully submitted"))
