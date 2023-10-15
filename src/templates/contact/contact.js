@@ -52,7 +52,7 @@ const Contact = () => {
 
     return(
         <Section>
-            <form ref={contactForm} onSubmit={handleSubmit} name="contact" method="POST" data-netlify="true" netlify="">
+            <form ref={contactForm} onSubmit={handleSubmit} name="contact_form" method="POST" data-netlify="true" netlify="">
             <input type="hidden" name="form-name" value="contact" />
                 <FormRow>
                     <label>
