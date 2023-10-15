@@ -24,35 +24,48 @@ const Contact = () => {
     const [emailAddress, setEmailAddress] = useState('generalInquiry@130public.net');
     const [subject, setSubject] = useState('Hello I am interested');
     const [message, setMessage] = useState('Please include me on the next order.');
-    const handleSubmit = (event) => {
+    const handleSubmit = async event => {
         event.preventDefault();
 
-        let data = {
+        let formData = new FormData(event.target);
+        formData.append('to', event.target.emailaddress.value);
+        formData.append('from', event.target.emailaddress.value);
+        formData.append('subject', 'Website contact from: '+event.target.firstname.value+" "+event.target.lastname.value);
+        formData.append('parameters', {
             'firstname':        event.target.firstname.value,
             'lastname':         event.target.lastname.value,
             'emailaddress' :    event.target.emailaddress.value,
             'subject':          event.target.subject.value,
             'message':          event.target.message.value,
-        };
-
-        //call to the Netlify Function you created
-        fetch("./.netlify/functions/SendEmail", {
-            method: "POST",
-            body: JSON.stringify(data)
         });
-    };
+        
+        try {
+
+            const response = await fetch('https://react-email-resend-coral-beta.vercel.app/api/send/', {
+                method: "POST",
+                cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
+                credentials: "omit", // include, *same-origin, omit
+                headers: { "Content-Type": "application/json" },
+                redirect: "follow", // manual, *folslow, error
+                referrer: "client", // no-referrer, *client
+                body: JSON.stringify(formData)
+            })
+    
+            const answer = await response.json()
+    
+            if (answer.success) {
+                alert(answer.message)
+            }else {
+                alert(answer.errors[0].msg)
+            }
+        } catch (err) {
+                alert('Error connecting to backend:', err);
+        }
+    }
 
     return(
         <Section>
-            <form
-                ref={contactForm}
-                data-netlify="true"
-                name="contact"
-                method="post"
-                //action="/pages/success"
-                onSubmit={handleSubmit}
-            >
-                <input type="hidden" name="form-name" value="contact" />
+            <form ref={contactForm} method="POST" onSubmit={handleSubmit}>
                 <FormRow>
                     <label>
                         First Name:
