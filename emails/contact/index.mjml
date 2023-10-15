@@ -4,6 +4,11 @@
       <mj-column>
         <mj-text font-size="20px" color="#F45E43" font-family="helvetica">Welcome, {{firstname}}</mj-text>
         <mj-text font-size="12px" color="#F45E43" font-family="helvetica">We hope you enjoy our super simple emails!</mj-text>
+        {{firstname}}
+        {{lastname}}
+        {{emailaddress}}
+        {{subject}}
+        {{message}}
       </mj-column>
     </mj-section>
   </mj-body>
