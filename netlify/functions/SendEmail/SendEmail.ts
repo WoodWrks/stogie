@@ -10,26 +10,22 @@ const handler: Handler = async function(event) {
   }
 
   const requestBody = JSON.parse(event.body) as {
-    from: String,
-    to: String,
-    subject: String,
+    emailaddress: String,
     firstname: string;
     lastname: string;
     subject: string;
     message: String;
   };
 
-  await fetch(
-    `${process.env.URL}/.netlify/functions/emails/contact`,
-    {
+  const response = await fetch(`${process.env.URL}/.netlify/functions/emails/contact`, {
       headers: {
-        "netlify-emails-secret": process.env.NETLIFY_EMAILS_SECRET,
+        "netlify-emails-secret": process.env.NETLIFY_EMAILS_SECRET
       },
       method: "POST",
       body: JSON.stringify({
-        from: requestBody.from,
+        from: requestBody.emailaddress,
         to: process.env.SERVERADMIN_EMAIL,
-        subject: requestBody.subject,
+        subject: 'Website contact from: '+requestBody.firstname+" "+requestBody.lastname,
         parameters: {
           firstname: requestBody.firstname, 
           lastname: requestBody.lastname,
@@ -41,10 +37,17 @@ const handler: Handler = async function(event) {
     }
   );
 
-  return {
-    statusCode: 200,
-    body: JSON.stringify("Subscribe email sent!"),
-  };
+  // return {
+  //   statusCode: 200,
+  //   body: JSON.stringify("Subscribe email sent!"),
+  // };
+  const {data, errors} = await response.json()
+  if (response.ok) {
+  } else {
+    // handle the graphql errors
+    const error = new Error(errors?.map(e => e.message).join('\n') ?? 'unknown')
+    return Promise.reject(error)
+  }
 };
 
 export { handler };

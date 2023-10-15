@@ -27,27 +27,20 @@ const Contact = () => {
     const handleSubmit = (event) => {
         event.preventDefault();
 
-        let formData = new FormData();
-        formData.append('to', event.target.emailaddress.value);
-        formData.append('from', event.target.emailaddress.value);
-        formData.append('subject', 'Website contact from: '+event.target.firstname.value+" "+event.target.lastname.value);
-        formData.append('parameters', {
+        let data = {
             'firstname':        event.target.firstname.value,
             'lastname':         event.target.lastname.value,
             'emailaddress' :    event.target.emailaddress.value,
             'subject':          event.target.subject.value,
             'message':          event.target.message.value,
-        });
-        
-        
-        fetch("/", {
+        };
+
+        //call to the Netlify Function you created
+        fetch("./.netlify/functions/SendEmail", {
             method: "POST",
-            headers: { "Content-Type": "application/x-www-form-urlencoded" },
-            body: new URLSearchParams(formData).toString(),
-        })
-        .then(() => console.log("Form successfully submitted"))
-        .catch((error) => alert(error));
-    }
+            body: JSON.stringify(data)
+        });
+    };
 
     return(
         <Section>
