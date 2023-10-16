@@ -24,12 +24,21 @@ const Column = styled.div`
     img{
         height:100%;
     }
+    @media screen and (max-width: 420px){
+        max-height:80vh;
+    }
 `
 const Left = styled(Column)`
     background-image: url(${greenBG});
+    @media screen and (max-width: 420px){
+        display:none;
+    }
 `
 const Right = styled(Column)`
     background-image: url(${blueBG});
+    @media screen and (max-width: 420px){
+        padding-left:6vw;
+    }
 `
 const Logo = styled.div`
     display:flex;
@@ -43,6 +52,12 @@ const Logo = styled.div`
     img{
         height:auto;
         width:20vw;
+        @media screen and (max-width: 420px){
+            width:60vw;
+        }
+        @media screen and (max-width: 769px){
+            width:25vw;
+        }
     }
 `
 const Product = () => {

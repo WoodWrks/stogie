@@ -13,15 +13,26 @@ const Section = styled.section`
         height:auto;
     }    
     padding: 20vh 0;
+    @media screen and (max-width: 769px){
+        padding: 10vh 0;
+    }
 `;
 const ImageContent = styled.div`
     padding: var(--gutter-sm) var(--gutter-lg) var(--gutter-sm);
+    @media screen and (max-width: 769px){
+        padding: 0 var(--gutter-md) var(--gutter-sm);
+    }
 `;
 const Content = styled.div`
     margin:0 auto;
     display:flex;
     width: 70vw;
     padding: var(--gutter-md) 0 0;
+    @media screen and (max-width: 769px){
+        width: 80vw;
+        flex-direction: column;
+        padding: var(--gutter-sm) 0 0;
+    }
 `
 const Left = styled.div`
     flex: 1 0;
@@ -34,6 +45,10 @@ const Left = styled.div`
         line-height:100%;
         color: ${( {theme} ) => theme.neutralForeground1};
         text-transform:uppercase;
+    }
+    @media screen and (max-width: 769px){
+        padding: 0 0 var(--gutter-md) 0;
+        br{display: none;}
     }
 `
 
@@ -75,7 +90,7 @@ const About = () => {
             </ImageContent>
             <Content>
                 <Left>
-                <h1>MEET<br/>YOUR<br/>MAKER.</h1>
+                <h1>MEET <br/>YOUR <br/>MAKER.</h1>
                 </Left>
                 <Right>
                     <h2>Husband. Father. legend in his own mind. And yes - he got's chops. 'Nuff said.</h2>

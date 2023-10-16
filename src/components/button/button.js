@@ -16,6 +16,7 @@ const ButtonStyled = styled(Link)`
     box-shadow:none;
     transition: all var(--durationSlow) var(--curveDecelerateMin);
     transform: scale(1.0);
+    white-space: nowrap;
     &:hover{
         cursor:pointer;
         color: ${ props => props.color === 'dark' ? ( {theme} ) => theme.neutralForegroundInverted1 : ( {theme} ) => theme.neutralForeground2 };

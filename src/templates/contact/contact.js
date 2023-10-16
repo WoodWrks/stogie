@@ -41,14 +41,22 @@ const Contact = () => {
         
         try {
 
-            const response = await fetch('https://react-email-resend-coral-beta.vercel.app/api/send/', {
+            const response = await fetch('https://react-email-resend-coral-beta.vercel.app/api/contact', {
                 method: "POST",
+                mode: 'no-cors', 
                 cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
                 credentials: "omit", // include, *same-origin, omit
                 headers: { "Content-Type": "application/json" },
                 redirect: "follow", // manual, *folslow, error
                 referrer: "client", // no-referrer, *client
-                body: JSON.stringify(formData)
+                body: JSON.stringify(formData),
+                parameters: {
+                    'firstname':        event.target.firstname.value,
+                    'lastname':         event.target.lastname.value,
+                    'emailaddress' :    event.target.emailaddress.value,
+                    'subject':          event.target.subject.value,
+                    'message':          event.target.message.value,
+                }
             })
     
             const answer = await response.json()

@@ -124,7 +124,17 @@ export const GlobalStyles = createGlobalStyle`
     overflow-x: hidden;
     overflow-y: scroll;
     overscroll-behavior: none;
+    @media screen and (max-width: 420px){
+      font-size:12px;
+    }
+    @media screen and (max-width: 768px){
+      font-size:16px;
+    }
+    @media screen and (min-width: 1280px){
+      font-size:var(--base-size);
+    }
   }
+  
   html,body{margin:0;padding:0;}
   *, :before, :after {
     box-sizing: border-box;
@@ -137,11 +147,6 @@ export const GlobalStyles = createGlobalStyle`
     font-size: var(--font-md);
     color: ${( {theme} ) => theme.neutralForeground1};
     background: ${({ theme }) => theme.neutralBackground1};
-  }
-  @media screen and (min-width: --screen-lg){
-    .app,body{
-      /* font-size: var(--font-sm)rem; */
-    }
   }
   h1,h2,h3,h4{
     font-family: var(--theme-font-secondary);

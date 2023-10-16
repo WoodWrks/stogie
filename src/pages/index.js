@@ -20,7 +20,7 @@ const IndexPage = () => {
       <Craft />
       <About />
       <Quote />
-      <Contact />
+      {/* <Contact /> */}
     </Layout>
   )
 }

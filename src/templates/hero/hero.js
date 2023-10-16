@@ -21,10 +21,25 @@ const HeroStyled = styled.section`
     background-position: 50% 50%;
     background-size:1764px auto;
     background-repeat:no-repeat;
+    @media screen and (max-width: 1025px){
+        background-size:1200px;
+    }
+    @media screen and (max-width: 769px){
+        min-height:60vh;
+        background-position: 50% 50%;
+    }
     .content{
         margin:0 auto;
         padding: 25vh 0 0;
         width:50vw;
+        @media screen and (max-width: 1025px){
+            padding: 30vh 0 0;
+            width:70vw;
+        }
+        @media screen and (max-width: 769px){
+            padding: 30vh 0 0;
+            width:70vw;
+        }
     }
     h1{
         margin:0;

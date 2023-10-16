@@ -9,6 +9,11 @@ const Section = styled.section`
     margin: 0 auto;
     padding: 20vh 0;
     width: 70vw;
+    @media screen and (max-width: 769px){
+        padding: 10vh 0;
+        width: 80vw;
+        flex-direction: column;
+    }
 `;
 
 const Headline = styled.div`
@@ -21,6 +26,9 @@ const Headline = styled.div`
         font-family:var(--theme-font-secondary);
         font-size:var(--font-xl);
         text-transform:uppercase;
+    }
+    @media screen and (max-width: 769px){
+        padding: 0 0 var(--gutter-md) 0;
     }
 `
 
