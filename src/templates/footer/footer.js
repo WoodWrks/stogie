@@ -17,6 +17,12 @@ const FooterImage = styled.div`
     img{
         height:auto;
         width:60vw;
+        @media screen and (max-width: 769px){
+            width:60vw;
+        }
+        @media screen and (max-width: 420px){
+            width:100vw;
+        }
     }
 `;
 const Footer = () => {

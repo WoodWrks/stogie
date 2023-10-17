@@ -16,7 +16,7 @@ const HeroContainer = styled.div`
 
 const HeroStyled = styled.section`
     position:relative;
-    min-height:80vh;
+    min-height:90vh;
     background-image:url(${hero});
     background-position: 50% 50%;
     background-size:1764px auto;
@@ -25,8 +25,16 @@ const HeroStyled = styled.section`
         background-size:1200px;
     }
     @media screen and (max-width: 769px){
-        min-height:60vh;
-        background-position: 50% 50%;
+        background-size:1000px auto;
+    }
+    @media screen and (max-width: 640px){
+        margin-left:-20vw;
+        background-size:900px auto;
+    }
+    @media screen and (max-width: 420px){
+        margin-left:-30vw;
+        min-height:80vh;
+        background-size:900px auto;
     }
     .content{
         margin:0 auto;
@@ -37,8 +45,13 @@ const HeroStyled = styled.section`
             width:70vw;
         }
         @media screen and (max-width: 769px){
-            padding: 30vh 0 0;
-            width:70vw;
+            padding: 50vh 0 0 10vw;
+        }
+        @media screen and (max-width: 640px){
+            padding: 55vh 0 0 10vw;
+        }
+        @media screen and (max-width: 420px){
+
         }
     }
     h1{

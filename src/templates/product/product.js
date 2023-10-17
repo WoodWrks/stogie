@@ -52,12 +52,13 @@ const Logo = styled.div`
     img{
         height:auto;
         width:20vw;
-        @media screen and (max-width: 420px){
-            width:60vw;
-        }
         @media screen and (max-width: 769px){
             width:25vw;
         }
+        @media screen and (max-width: 420px){
+            width:80vw;
+        }
+        
     }
 `
 const Product = () => {

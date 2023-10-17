@@ -21,7 +21,8 @@ const Section = styled.section`
         width: 80vw;
     }
     @media screen and (max-width: 420px){
-        flex-direction: column;
+        padding: 0 0 10vh;
+        flex-direction: column-reverse;
     }
 `;
 const Left = styled.div`
@@ -63,7 +64,9 @@ const ThreadedComp = styled.div`
         width:30vh;
     }
     @media screen and (max-width: 420px){
-        width:30vh;
+        margin-top: var(--gutter-xl);
+        height:40vh;
+        width:40vh;
     }
 `;
 const ThreadedLayer = styled.div`
@@ -77,6 +80,10 @@ const ThreadedLayer = styled.div`
     @media screen and (max-width: 769px){
         top:-5vh;
         background-size:auto 30vh;
+    }
+    @media screen and (max-width: 420px){
+        left:-15vw;
+        background-size:auto 40vh;
     }
 `;
 const Mask = styled(ThreadedLayer)`
