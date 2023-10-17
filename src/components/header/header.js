@@ -19,6 +19,9 @@ const LogoStyled = styled.div`
     img{
         height:120px;
         filter: drop-shadow(0px 0px 25px rgba(0,0,0,0.8) );
+        @media screen and (max-width: 640px){
+            height:90px;
+        }
     }
 `;
 const NavStyled = styled.nav`
