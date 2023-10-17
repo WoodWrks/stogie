@@ -12,6 +12,8 @@ const HeroContainer = styled.div`
     position:relative;
     background-image:url(${heroBG});
     background-size:300px;
+    width: 100vw;
+    overflow:hidden;
     @media screen and (max-width: 420px){
         background-size:100px;
     }
@@ -46,7 +48,7 @@ const HeroStyled = styled.section`
     }
     .content{
         margin:0 auto;
-        padding: 25vh 0 0;
+        padding: 37vh 0 0;
         width:50vw;
         @media screen and (max-width: 1025px){
             padding: 30vh 0 0;

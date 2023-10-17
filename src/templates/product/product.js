@@ -13,6 +13,8 @@ const Section = styled.section`
     display:flex;
     position:relative;
     justify-content:space-between;
+    width:100vw;
+    overflow:hidden;
 `
 const Column = styled.div`
     display:flex;

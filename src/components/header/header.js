@@ -7,7 +7,7 @@ import logoSVG from '../../assets/brand/woodworks.svg';
 
 const HeaderStyled = styled.header`
     position:absolute;
-    width:100%;
+    width:100vw;
     padding: var(--gutter-md) var(--gutter-md) 0;
     display:flex;
     justify-content: space-around;

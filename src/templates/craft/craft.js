@@ -13,8 +13,8 @@ const Section = styled.section`
     position:relative;
     display:flex;
     margin: 0 auto;
-    padding: 20vh 0;
-    width: 70vw;
+    padding: 20vh 15vw;
+    width: 100vw;
     overflow:hidden;
     @media screen and (max-width: 769px){
         padding: 10vh 0;

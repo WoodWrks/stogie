@@ -8,17 +8,19 @@ import SocialProfiles from "../../components/socialprofiles/socialprofiles";
 const Section = styled.section`
     position:relative;
     background: ${( {theme} ) => theme.neutralBackground2};
-    img{
-        width:100%;
-        height:auto;
-    }    
     padding: 20vh 0;
+    width: 100vw;
+    overflow:hidden;
     @media screen and (max-width: 769px){
         padding: 10vh 0;
     }
 `;
 const ImageContent = styled.div`
     padding: var(--gutter-sm) var(--gutter-lg) var(--gutter-sm);
+    img{
+        width:100%;
+        height:auto;
+    }    
     @media screen and (max-width: 769px){
         padding: 0 var(--gutter-md) var(--gutter-sm);
     }

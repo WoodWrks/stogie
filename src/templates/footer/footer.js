@@ -10,6 +10,8 @@ const FooterStyled = styled.footer`
     background-image:url(${footerBG});
     background-size:60vw auto;
     background-color:red;
+    width: 100vw;
+    overflow:hidden;
 `;
 const FooterImage = styled.div`
     display:flex;
