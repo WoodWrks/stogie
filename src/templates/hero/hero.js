@@ -60,10 +60,10 @@ const HeroStyled = styled.section`
             width:100vw;
         }
         @media screen and (max-width: 420px){
-            padding: 55vh 0 0 40vw;
+            padding: 55vh 0 0 35vw;
         }
         @media screen and (max-width: 376px){
-            padding: 60vh 0 0 40vw;
+            padding: 55vh 0 0 35vw;
         }
     }
     h1{
