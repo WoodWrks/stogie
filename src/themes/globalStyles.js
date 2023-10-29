@@ -171,16 +171,15 @@ export const GlobalStyles = createGlobalStyle`
   }
   a:not(.button){
     color: ${({ theme }) => theme.colorLinkRest};
-    color: ${( {theme} ) => theme.neutralForeground1};
     text-decoration: none;
     outline:none;
     transition: all var(--curveAccelerateMax) var(--durationFast);
-    box-shadow: inset 0 var(--underline-weight) 0 0 ${({ theme }) => theme.neutralForeground2};
+    box-shadow: inset 0 var(--underline-weight) 0 0 ${({ theme }) => theme.transparent};
     &:hover, &:focus{
       color: ${({ theme }) => theme.colorLinkRest};
       text-decoration: none;
       outline:none;
-      box-shadow: inset 0 var(--underline-weight) 0 0 ${({ theme }) => theme.colorLinkHover};
+      box-shadow: inset 0 var(--underline-weight) 0 0 ${({ theme }) => theme.colorBrandBackground2};
     }
   }
   pre{

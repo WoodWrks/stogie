@@ -3,18 +3,17 @@ import styled from 'styled-components';
 
 const Section = styled.section`
     position:relative;
-    background: ${( {theme} ) => theme.neutralBackground2};
+    background: ${( {theme} ) => theme.neutralBackground1};
     img{
         width:100%;
         height:auto;
     }    
-    padding: 2.5vh 0;
 `;
 const Content = styled.div`
     margin:0 auto;
     display:flex;
     width: 70vw;
-    padding: var(--gutter-md) 0 var(--gutter-lg);
+    padding: 15vh 0 10vh;
 `
 const Center = styled.div`
     flex: 2 0;

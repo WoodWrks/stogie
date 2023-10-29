@@ -21,6 +21,20 @@ const Layout = (props) => {
       requestAnimationFrame(raf);
     }
     requestAnimationFrame(raf);
+
+    document.querySelectorAll('a').forEach(anchor => {
+      console.log('anchorfound');
+      anchor.addEventListener('click', function (e) {
+        // console.log('click');
+        // console.log(e);
+        e.preventDefault();
+        lenis.scrollTo(e.currentTarget.hash, { 
+          duration: 3,
+          easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
+          smooth: true })
+      });
+    })
+
   }, []);
 
   return (

@@ -1,10 +1,11 @@
 //https://blog.logrocket.com/build-react-theme-switcher-app-styled-components/
 const lightTheme = {
     theme:'LIGHT',
-    colorBrandForeground1: '#227bf9',
-    colorBrandForeground2: '#6219ee',
-    colorBrandBackground1: 'rgba(34,123,249,1.0)',
-    colorBrandBackground2: 'rgba(98,25,238,1.0)',
+    colorBrandForeground1: '#344d36',
+    colorBrandForeground2: '#3a5960',
+    colorBrandBackground1: 'rgba(255, 255, 255, 0.5)',
+    colorBrandBackground2: 'rgba(255, 255, 255, 0.75)',
+    transparent:'rgba(255, 255, 255, 0.0)',
     //
     neutralForeground1: 'rgba(0, 0, 0, 0.9)',
     neutralForeground2: 'rgba(0, 0, 0, 0.75)',
@@ -14,7 +15,7 @@ const lightTheme = {
     neutralForegroundInverted2: 'rgba(255, 255, 255, 0.75)',
     //
     neutralBackground1: 'rgba(225, 225, 225, 1.0)',
-    neutralBackground2: 'rgba(255, 255, 255, 1.0)',
+    neutralBackground2: 'rgba(255, 255, 255, 0.9)',
     neutralBackgroundInverted1: 'rgba(0, 5, 20, 1.0)',
     neutralBackgroundInverted2: 'rgba(0, 0, 0, 1.0)',
     //

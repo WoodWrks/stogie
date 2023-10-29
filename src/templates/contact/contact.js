@@ -1,4 +1,4 @@
-import React, {useRef, useState} from "react"
+import React, {useRef, useState, useEffect} from "react"
 import styled from 'styled-components';
 import InputButton from "../../components/inputbutton";
 
@@ -9,7 +9,7 @@ const Section = styled.section`
         width:100%;
         height:auto;
     }    
-    padding: 2.5vh 0 15vh;
+    padding: 15vh 0 15vh;
     form{
         margin:0 auto;
         width:50vw;
@@ -30,7 +30,8 @@ const FormRow = styled.div`
             color: ${( {theme} ) => theme.neutralForeground3};
         }
     }
-    input[type='text']{
+    input[type='text'],
+    input[type='email']{
         display:block;
         width:100%;
         font-size: var(--font-md);
@@ -39,70 +40,111 @@ const FormRow = styled.div`
         padding: var(--gutter-xs) var(--gutter-sm);
         border:1px solid ${( {theme} ) => theme.neutralStroke2};
         background: ${( {theme} ) => theme.neutralBackground1};
+        &{::placeholder {
+            color: ${( {theme} ) => theme.neutralStroke2};
+        }
     }
 `;
+const StatusMessage = styled.div`
+    position:fixed;
+    top:0;
+    left:0;
+    right:0;
+    width:100%;
+    margin-bottom:var(--gutter-md);
+    padding:var(--gutter-xs);
+    border:2px solid ${( {theme} ) => theme.neutralStroke2};
+    border-radius: var(--borderRadius-xs);
+    background: ${( {theme} ) => theme.neutralBackground2};
+    text-align:center;
+`
+
+const FormStatus = (props) => {
+    
+    if(props.status == 'sending'){
+        return <StatusMessage>Sending</StatusMessage>
+    }else if (props.status == 'sent'){
+        return <StatusMessage>Sent</StatusMessage>
+    }else if (props.status == 'error'){
+        return <StatusMessage>Failed to send. There is an error with the server, please try again later</StatusMessage>
+    }else {
+        return '';
+    }
+}
 
 const Contact = () => {
     const contactForm = useRef(null);
+    const [formAction,setFormAction] = useState('');
+    const [showStatus,setShowStatus] = useState(false);
     const [firstName, setFirstName] = useState('');
     const [lastName, setLastName] = useState('');
     const [from, setFrom] = useState('');
     const [subject, setSubject] = useState('');
     const [message, setMessage] = useState('');
+
     const handleSubmit = async event => {
         event.preventDefault();
         let formData = new FormData(event.target);
+        setFormAction('sending');
+        setShowStatus(true);
         
         try {
-            const response = await fetch('https://nodejs-resend-endpoint-git-main-jasonjgeiger.vercel.app/api/email', {
+            const response = await fetch('https://stogie-resend-endpoint.vercel.app//api/email', {
                 method: "POST",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                // mode: 'no-cors', 
-                // cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
-                // credentials: "omit", // include, *same-origin, omit
-                // redirect: "follow", // manual, *folslow, error
-                // referrer: "client", // no-referrer, *client
                 body: new URLSearchParams(formData),
             })
-    
-            const answer = await response.json()
-            console.log(answer.data);
-            console.log(answer.body);
+            
+            const answer = await response.json();
+            setFormAction('sent');
+            setTimeout(() => {
+                setShowStatus(false);
+            }, 6000);
+            // console.log(answer.data);
+            // console.log(answer.body);
         } catch (err) {
-            console.log(err);
-            alert('Error connecting to backend. Try again later.', err);
+            setFormAction('error');
+            setTimeout(() => {
+                setShowStatus(false);
+            }, 6000);
+            //console.log(err);
+            //alert('Error connecting to backend. Try again later.', err);
+
         }
     }
 
     return(
-        <Section>
+        <Section id="contact">    
+            {showStatus &&
+                <FormStatus status={formAction}  />
+            }
             <form ref={contactForm} method="POST" onSubmit={handleSubmit}>
                 <FormRow>
                     <label>
                         <span>First Name <span>(required)</span></span>
-                        <input name="firstname" type="text" required value={firstName} onChange={e => setFirstName(e.target.value)} />
+                        <input name="firstname" type="text" required value={firstName} placeholder="" onChange={e => setFirstName(e.target.value)} />
                     </label>
                     <label>
                         <span>Last Name <span>(required)</span></span>
-                        <input name="lastname" type="text" required value={lastName} onChange={e => setLastName(e.target.value)} />
+                        <input name="lastname" type="text" required value={lastName} placeholder="" onChange={e => setLastName(e.target.value)} />
                     </label>
                 </FormRow>
                 <FormRow>
                 <label>
                     <span>Email Address <span>(required)</span></span>
-                    <input name="from" type="text" value={from} required onChange={e => setFrom(e.target.value)} />
+                    <input name="from" type="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" value={from} required placeholder="" onChange={e => setFrom(e.target.value)} />
                 </label>
                 </FormRow>
                 <FormRow>
                     <label>
                     <span>Subject <span>(required)</span></span>
-                        <input name="subject" type="text" value={subject} required onChange={e => setSubject(e.target.value)} />
+                        <input name="subject" type="text" value={subject} required placeholder="" onChange={e => setSubject(e.target.value)} />
                     </label>
                 </FormRow>
                 <FormRow>
                     <label>
-                        <span>Message <span>(required)</span></span>
-                        <input name="message" type="text" value={message} onChange={e => setMessage(e.target.value)} />
+                        <span >Message <span>(required)</span></span>
+                        <input name="message" type="text" value={message} required placeholder="" onChange={e => setMessage(e.target.value)} />
                     </label>
                 </FormRow>
                 <FormRow className="centered">

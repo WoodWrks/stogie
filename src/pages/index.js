@@ -12,13 +12,16 @@ import Quote from '../templates/quote';
 import Contact from '../templates/contact';
 
 const IndexPage = () => {
+
+  
+
   return (
     <Layout className="layout">
       <Hero />
       <Intro />
       <Product />
       <Craft />
-      <About />
+      <About  />
       <Quote />
       <Contact />
     </Layout>

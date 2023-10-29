@@ -28,7 +28,7 @@ const NavStyled = styled.nav`
     display:flex;
     flex-grow: 1;
     justify-content: right;
-    color: ${( {theme} ) => theme.neutralForegroundInverted1};
+    color: ${( {theme} ) => theme.neutralBackground2};
     ul{
         display:inline;
         margin:0;
@@ -39,8 +39,11 @@ const NavStyled = styled.nav`
           display: inline;
           padding-right:var(--gutter-sm);
           a{
-            color: ${( {theme} ) => theme.neutralForegroundInverted1};
+            color: ${( {theme} ) => theme.neutralBackground2};
             text-transform:uppercase;
+            &:hover{
+                color: ${( {theme} ) => theme.neutralBackground2};
+            }
           }
         }
     }
@@ -78,10 +81,10 @@ const Header = () => {
             <NavStyled>
                 <ul>
                     <li>
-                        <a href="/about">About</a>
+                        <a href="#about">About</a>
                     </li>
                 </ul>
-                <SocialProfiles iconSize={'1.5rem'} />
+                <SocialProfiles iconSize="1.5rem"/>
             </NavStyled>
 
         </HeaderStyled>
