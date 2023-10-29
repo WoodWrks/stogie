@@ -11,7 +11,7 @@ const LayoutStyled = styled.div`
 `
 
 const Layout = (props) => {
-  const layoutRef = useRef(null);
+  const ref = useRef(null);
   useEffect(() => {
     const lenis = new Lenis();
     lenis.on('scroll', (e) => {
@@ -23,6 +23,7 @@ const Layout = (props) => {
     }
     requestAnimationFrame(raf);
 
+    const layoutRef = ref.current;
     layoutRef.querySelectorAll('a').forEach(anchor => {
       console.log('anchorfound');
       anchor.addEventListener('click', function (e) {
@@ -43,7 +44,7 @@ const Layout = (props) => {
       <GlobalFonts />
       <GlobalVars />
       <GlobalStyles />
-      <LayoutStyled className="layout" location={props.location} ref={layoutRef}>
+      <LayoutStyled className="layout" location={props.location} ref={ref}>
         <Header />
         {props.children}
         <Footer />
