@@ -127,7 +127,7 @@ const Craft = () => {
                 <h2>CRAFT<br/>IS KING.</h2>
                 <p>Each piece is lathe turned, threaded, sanded, and polished by — wait for it — our hands.
     Production runs are currently limited to small batches.</p>
-                <Button to="#" color="light">ORDER INQUIRY</Button>
+                <Button type="Link" to="#" color="light">ORDER INQUIRY</Button>
             </Left>
             <Right>
                 <ThreadedComp>

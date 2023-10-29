@@ -1,14 +1,13 @@
 import React from "react"
 import styled from "styled-components";
-import {Link} from "gatsby";
 
-const ButtonStyled = styled(Link)`
+const ButtonStyled = styled.input`
     margin:0;
-    padding: 0.3rem 1rem 0.25rem 1rem;
+    padding: 0.75rem 2rem 0.75rem 2rem;
     color: ${ props => props.color === 'dark' ? ( {theme} ) => theme.neutralForegroundInverted1 : ( {theme} ) => theme.neutralForeground1 };
     background-color: ${ props => props.color === 'dark' ? ( {theme} ) => theme.neutralBackgroundInverted1 : ( {theme} ) => theme.neutralBackground1 };
     font-family:var(--theme-font-secondary);
-    font-size:var(--font-sm);
+    font-size:var(--font-md);
     text-transform:uppercase;
     text-decoration:none;
     border:0;
@@ -27,12 +26,12 @@ const ButtonStyled = styled(Link)`
     }
 `
 
-const Button = (props) => {
+const InputButton = (props) => {
 
     return(
-        <ButtonStyled className="button" to={props.to} {...props}>{props.children}</ButtonStyled>
+        <ButtonStyled className="button" type="submit" {...props}>{props.children}</ButtonStyled>
     );
 
 }
 
-export default Button;
+export default InputButton;

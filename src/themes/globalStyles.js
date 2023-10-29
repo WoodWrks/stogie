@@ -61,6 +61,7 @@ export const GlobalVars = createGlobalStyle`
     --screen-sm: 24rem;
 
     --base-size:20px;
+    --font-xxs: 0.7rem;
     --font-xs: 0.875rem;
     --font-sm: 1.0rem;
     --font-md: 1.15rem;
@@ -70,6 +71,7 @@ export const GlobalVars = createGlobalStyle`
     --font-xxxl: 5rem;
     --font-xxxxl: 7rem;
 
+    --gutter-xxs:0.25rem;
     --gutter-xs:0.5rem;
     --gutter-sm:1rem;
     --gutter-md:2rem;

@@ -85,7 +85,7 @@ const Intro = () => {
             <Body className="body">
                 <p>First used by ancient monks, cylindrical open-ended smoking pipes, or “chillums,” have been associated with introspection, meditation, and spirituality. It is said — only after a lifetime guided by these fundamental practices, may one begin to realize enlightenment. Sounds like quite the trip...better pack accordingly.</p>
                 <p>Ready to chill and breathe in the finer things?</p>
-                <Button color="light" to="/contact">Give us a shout</Button>
+                <Button type="Link" color="light" to="/contact">Give us a shout</Button>
             </Body>
         </Section>
     );

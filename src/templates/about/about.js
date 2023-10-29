@@ -99,7 +99,7 @@ const About = () => {
                     <p>Founded by self-taught craftsman Hugh Mulligan in 2016, Gots Chops WoodWrks is a small Arizona based studio that designs and builds finely crafted modern furniture & goods. For some, creativity can be a curse as much as it can a gift and this uncontrollable compulsion to achieve perfection can be a physically, mentally, and emotionally crushing endeavor. We here at WoodWrks don't subscribe to such frippery and drivel, however. We absolutely enjoy the f%@ out of creating things!</p>
                     <p>Because when the last drop of blood has been shed and the final coat of finish buffed, you end up with a "thing." A tangible, measurable, useful, beautiful...thing. Creating and building these things is an incredible journey - and one we have the privilege of sharing with our clients. So sit back, relax, and enjoy the ride.</p>
                     <p>See us in action on Instagram or feel free to contact us with new work inquiries, burning questions, high-praise, facial hair advice, or anything else you'd like to chat about. We're always taking new work and we'd love to hear from you. In Chops We Trust. Thanks!</p>
-                    <CTAs><Button color="dark">Give us a shout</Button> <SocialProfiles iconSize={'2.6rem'} /></CTAs>
+                    <CTAs><Button type="Link" color="dark">Give us a shout</Button> <SocialProfiles iconSize={'2.6rem'} /></CTAs>
                 </Right>
             </Content>
         </Section>

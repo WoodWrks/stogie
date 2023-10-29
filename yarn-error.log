@@ -1,5 +1,5 @@
 Arguments: 
-  /usr/local/bin/node /usr/local/bin/yarn add cors
+  /usr/local/bin/node /usr/local/bin/yarn add clarity-js
 
 PATH: 
   /Users/jjgeiger/.pyenv/shims:/Users/jjgeiger/.pyenv/bin:/opt/homebrew/bin:/opt/homebrew/sbin:/opt/local/bin:/opt/local/sbin:/usr/local/bin:/System/Cryptexes/App/usr/bin:/usr/bin:/bin:/usr/sbin:/sbin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/local/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/bin:/var/run/com.apple.security.cryptexd/codex.system/bootstrap/usr/appleinternal/bin
@@ -14,7 +14,7 @@ Platform:
   darwin arm64
 
 Trace: 
-  Error: EACCES: permission denied, mkdir '/Users/jjgeiger/_PROJECTS/stogie/node_modules/@typescript-eslint/visitor-keys/node_modules/eslint-visitor-keys/dist'
+  Error: EACCES: permission denied, mkdir '/Users/jjgeiger/_PROJECTS/stogie/node_modules/@typescript-eslint/parser/_ts3.4'
 
 npm manifest: 
   {
