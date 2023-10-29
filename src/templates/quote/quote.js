@@ -1,4 +1,4 @@
-import React, {useRef, useEffect} from "react";
+import React from "react";
 import styled from 'styled-components';
 
 const Section = styled.section`
@@ -42,7 +42,7 @@ const Quote = () => {
         <Section>
             <Content>
                 <Center>
-                    <blockquote><span>“After more than a decade behind a desk creating visual art as a graphic designer — I realized it was the desk I wanted to be creating all along. And the rest is still being written...”</span><span className="yourJohnHancock">— h.m. mulligan, I</span></blockquote>
+                    <blockquote><span>“After more than a decade behind a desk creating visual art as a graphic designer — I realized it was the desk I wanted to be creating all along. And the rest is still being written...”</span><span className="yourJohnHancock">— H.M. Mulligan, I</span></blockquote>
                 </Center>
             </Content>
         </Section>

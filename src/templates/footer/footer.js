@@ -44,7 +44,7 @@ const Footer = () => {
 
     return (
         <FooterStyled ref={ref}>
-            <FooterImage className="footer-image"><img src={Image} /></FooterImage>
+            <FooterImage className="footer-image"><img src={Image} alt="" /></FooterImage>
         </FooterStyled>
     );
 }

@@ -1,4 +1,4 @@
-import React, {useRef, useState, useEffect} from "react"
+import React, {useRef, useState} from "react"
 import styled from 'styled-components';
 import InputButton from "../../components/inputbutton";
 
@@ -61,11 +61,11 @@ const StatusMessage = styled.div`
 
 const FormStatus = (props) => {
     
-    if(props.status == 'sending'){
+    if(props.status === 'sending'){
         return <StatusMessage>Sending</StatusMessage>
-    }else if (props.status == 'sent'){
+    }else if (props.status === 'sent'){
         return <StatusMessage>Sent</StatusMessage>
-    }else if (props.status == 'error'){
+    }else if (props.status === 'error'){
         return <StatusMessage>Failed to send. There is an error with the server, please try again later</StatusMessage>
     }else {
         return '';
@@ -100,14 +100,14 @@ const Contact = () => {
             setTimeout(() => {
                 setShowStatus(false);
             }, 6000);
-            // console.log(answer.data);
+            console.log(answer.data);
             // console.log(answer.body);
         } catch (err) {
             setFormAction('error');
             setTimeout(() => {
                 setShowStatus(false);
             }, 6000);
-            //console.log(err);
+            console.log(err);
             //alert('Error connecting to backend. Try again later.', err);
 
         }

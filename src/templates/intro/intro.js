@@ -2,7 +2,6 @@ import React, {useRef, useEffect} from "react";
 import styled from 'styled-components';
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Lenis from "@studio-freight/lenis";
 import Button from "../../components/button";
 
 const Section = styled.section`
@@ -77,29 +76,6 @@ const Intro = () => {
             ease: 'Circ.easeOut'
         })
     }, []);
-
-    const lenis = new Lenis({
-        duration: 1, // speed
-        easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)), // https://www.desmos.com/calculator/brs54l4xou
-        direction: "vertical", // vertical, horizontal
-        gestureDirection: "vertical", // vertical, horizontal, both
-        smooth: true,
-        mouseMultiplier: 0.5, // sensibility
-        smoothTouch: false, // Mobile
-        touchMultiplier: 2, // sensibility on mobile
-        infinite: false // Infinite scrolling
-      });
-    const handleClickScroll = (event) => {
-        
-        event.preventDefault();
-        const element = document.getElementById('contact');
-        console.log('click');
-        if (element) {
-            console.log('scroll');
-            lenis.scrollTo('#contact');
-            //element.scrollIntoView({ behavior: 'smooth' });
-        }
-      };
 
     return(
         <Section ref={ref} id="intro">

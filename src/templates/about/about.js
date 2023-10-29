@@ -88,7 +88,7 @@ const About = () => {
         <Section id="about">
             <Divide position="top"/>
             <ImageContent>
-                <img src={Hugh} />
+                <img src={Hugh} alt="Portrait of H.M. Mulligan, I" />
             </ImageContent>
             <Content>
                 <Left>

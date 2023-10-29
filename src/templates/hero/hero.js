@@ -139,7 +139,7 @@ const Hero = () => {
         <HeroContainer>
             <HeroStyled ref={ref} id="hero">
                 <div className="content">
-                    <h1><img src={stogieSVG} /></h1>
+                    <h1><img src={stogieSVG}  alt="Stogie" /></h1>
                     <h2>A highly refined<br/>smoking experience.</h2>
                 </div>
             </HeroStyled>

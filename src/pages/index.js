@@ -1,5 +1,4 @@
-import React, {useRef, useEffect} from "react";
-import styled from "styled-components";
+import React from "react";
 
 import Layout from '../templates/layout';
 
@@ -12,8 +11,6 @@ import Quote from '../templates/quote';
 import Contact from '../templates/contact';
 
 const IndexPage = () => {
-
-  
 
   return (
     <Layout className="layout">

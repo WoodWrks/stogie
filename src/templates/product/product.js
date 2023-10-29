@@ -90,13 +90,13 @@ const Product = () => {
     return(
         <Section ref={ref}>
             <Logo className="logo">
-                <img src={stogieSVG} />
+                <img src={stogieSVG} alt="Stogie" />
             </Logo>
             <Left className="left">
-                <img src={greenProduct} />
+                <img src={greenProduct} alt="" />
             </Left>
             <Right className="right">
-                <img src={blueProduct} />
+                <img src={blueProduct} alt="" />
             </Right>
         </Section>
     );

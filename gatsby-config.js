@@ -7,6 +7,9 @@ module.exports = {
     title: `Stogie2`,
     siteUrl: `https://www.yourdomain.tld`
   },
+  flags: {
+    DEV_SSR: true
+  },
   plugins: [
     "gatsby-plugin-styled-components",
     "gatsby-plugin-image",
