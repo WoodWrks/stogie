@@ -19,8 +19,17 @@ const LogoStyled = styled.div`
     img{
         height:120px;
         filter: drop-shadow(0px 0px 25px rgba(0,0,0,0.8) );
-        @media screen and (max-width: 640px){
+        @media screen and (max-width: 769px){
             height:90px;
+        }
+        @media screen and (max-width: 641px){
+            height:90px;
+        }
+        @media screen and (max-width: 421px){
+            height:60px;
+        }
+        @media screen and (max-width: 376px){
+            height:40px;
         }
     }
 `;

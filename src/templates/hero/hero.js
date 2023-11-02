@@ -12,11 +12,13 @@ const HeroContainer = styled.div`
     position:relative;
     background-image:url(${heroBG});
     background-size:300px;
-    width: 100vw;
-    overflow:hidden;
+    @media screen and (max-width: 769px){
+        background-size:50px;
+    }
     @media screen and (max-width: 420px){
         background-size:100px;
     }
+    
 `
 
 const HeroStyled = styled.section`
@@ -38,6 +40,7 @@ const HeroStyled = styled.section`
         background-size:200vw auto;
     }
     @media screen and (max-width: 641px){
+        margin-top:20vw;
         margin-left:-50vw;
         background-size:240vw auto;
     }
@@ -47,8 +50,13 @@ const HeroStyled = styled.section`
         background-size:260vw auto;
     }
     @media screen and (max-width: 376px){
-        margin-top:-15vw;
+        margin-top:10vw;
         background-size:240vw auto;
+    }
+    @media screen and (max-height: 420px){
+        margin-left:0vw;
+        margin-top:0;
+        background-size:200vh auto;
     }
     .content{
         margin:0 auto;
@@ -78,6 +86,9 @@ const HeroStyled = styled.section`
         @media screen and (max-width: 376px){
             padding: 60vh 0 0 25vw;
         }
+        @media screen and (max-height: 420px){
+            padding: 45vh 0 0 5vw;
+        }
     }
     h1{
         margin:0;
@@ -96,6 +107,9 @@ const HeroStyled = styled.section`
                 height:6.5rem;
             }
             @media screen and (max-width: 376px){
+                height:4rem;
+            }
+            @media screen and (max-height: 420px){
                 height:4rem;
             }
         }

@@ -13,6 +13,11 @@ const Section = styled.section`
     form{
         margin:0 auto;
         width:50vw;
+        @media screen and (max-width: 641px){
+            width:80%;
+        }
+
+
     }
 `;
 const FormRow = styled.div`
