@@ -76,7 +76,7 @@ const Product = () => {
         gsap.timeline({
             scrollTrigger: {
                 trigger: element,
-                start: "-10% center",
+                start: "20% center",
                 end: "70% center",
                 scrub: false,
                 markers: false

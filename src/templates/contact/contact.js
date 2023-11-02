@@ -89,7 +89,7 @@ const Contact = () => {
         setShowStatus(true);
         
         try {
-            const response = await fetch('https://stogie-resend-endpoint.vercel.app//api/email', {
+            const response = await fetch('https://stogie-resend-endpoint.vercel.app/api/email', {
                 method: "POST",
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
                 body: new URLSearchParams(formData),

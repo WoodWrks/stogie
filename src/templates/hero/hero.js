@@ -24,10 +24,10 @@ const HeroStyled = styled.section`
     min-height:90vh;
     background-image:url(${hero});
     background-position: 50% 50%;
-    background-size:130vw auto;
+    background-size:110vw auto;
     background-repeat:no-repeat;
-    margin-left:-10vw;
-    @media screen and (max-width: 1440px){
+    margin-left:-5vw;
+    @media screen and (max-width: 1471px){
         margin-left:-5vw;
     }
     @media screen and (max-width: 1201px){
@@ -57,7 +57,7 @@ const HeroStyled = styled.section`
         @media screen and (max-width: 1601px){
             width:60vw;
         }
-        @media screen and (max-width: 1440px){
+        @media screen and (max-width: 1471px){
             padding: 40vh 0 0;
             width:60vw;
         }
@@ -85,9 +85,9 @@ const HeroStyled = styled.section`
         color: ${( {theme} ) => theme.neutralForegroundInverted1};
         font-family:var(--theme-font-secondary);
         img{
-            height:9rem;
-            @media screen and (max-width: 1440px){
-                height:7.75rem;
+            height:7.5rem;
+            @media screen and (max-width: 1471px){
+                height:7.5rem;
             }
             @media screen and (max-width: 1201px){
                 height:7.5rem;
@@ -101,13 +101,13 @@ const HeroStyled = styled.section`
         }
     }
     h2{
-        margin:-12px 0 0;
+        margin:-25px 0 0;
         padding:0;
         color: ${( {theme} ) => theme.neutralForegroundInverted1};
         font-family:var(--theme-font-secondary);
-        font-size:1.75rem;
-        @media screen and (max-width: 1440px){
-            font-size:var(--font-lg);
+        font-size:1.4rem;
+        @media screen and (max-width: 1471px){
+            font-size:1.4rem;
         }
         @media screen and (max-width: 1201px){
             margin:-20px 0 0;

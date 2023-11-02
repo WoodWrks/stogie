@@ -30,6 +30,9 @@ const Content = styled.div`
     display:flex;
     width: 70vw;
     padding: var(--gutter-md) 0 0;
+    @media screen and (max-width: 1471px){
+        width: 90vw;
+    }
     @media screen and (max-width: 769px){
         width: 80vw;
         flex-direction: column;
