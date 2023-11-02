@@ -24,48 +24,59 @@ const HeroStyled = styled.section`
     min-height:90vh;
     background-image:url(${hero});
     background-position: 50% 50%;
-    background-size:1764px auto;
+    background-size:130vw auto;
     background-repeat:no-repeat;
-    @media screen and (max-width: 1025px){
-        background-size:1200px;
+    margin-left:-10vw;
+    @media screen and (max-width: 1440px){
+        margin-left:-5vw;
+    }
+    @media screen and (max-width: 1201px){
+        background-size:150vw auto;
     }
     @media screen and (max-width: 769px){
-        background-size:1000px auto;
+        margin-left:-30vw;
+        background-size:200vw auto;
     }
-    @media screen and (max-width: 640px){
-        margin-left:-20vw;
-        background-size:900px auto;
-    }
-    @media screen and (max-width: 420px){
+    @media screen and (max-width: 641px){
         margin-left:-50vw;
-        min-height:80vh;
-        background-size:1000px auto;
+        background-size:240vw auto;
+    }
+    @media screen and (max-width: 421px){
+        margin-left:-60vw;
+        min-height:85vh;
+        background-size:260vw auto;
     }
     @media screen and (max-width: 376px){
-        margin-left:-50vw;
-        min-height:90vh;
-        background-size:750px auto;
+        margin-top:-15vw;
+        background-size:240vw auto;
     }
     .content{
         margin:0 auto;
         padding: 37vh 0 0;
         width:50vw;
-        @media screen and (max-width: 1025px){
-            padding: 30vh 0 0;
+        @media screen and (max-width: 1601px){
+            width:60vw;
+        }
+        @media screen and (max-width: 1440px){
+            padding: 40vh 0 0;
+            width:60vw;
+        }
+        @media screen and (max-width: 1201px){
+            padding: 40vh 0 0;
             width:70vw;
         }
         @media screen and (max-width: 769px){
-            padding: 50vh 0 0 15vw;
+            padding: 60vh 0 0 10vw;
+            width:70vw;
         }
-        @media screen and (max-width: 640px){
-            padding: 55vh 0 0 25vw;
-            width:100vw;
+        @media screen and (max-width: 641px){
+            padding: 65vh 0 0 25vw;
         }
-        @media screen and (max-width: 420px){
-            padding: 55vh 0 0 35vw;
+        @media screen and (max-width: 421px){
+            padding: 60vh 0 0 25vw;
         }
         @media screen and (max-width: 376px){
-            padding: 55vh 0 0 35vw;
+            padding: 60vh 0 0 25vw;
         }
     }
     h1{
@@ -74,9 +85,18 @@ const HeroStyled = styled.section`
         color: ${( {theme} ) => theme.neutralForegroundInverted1};
         font-family:var(--theme-font-secondary);
         img{
-            height:var(--gutter-xl);
+            height:9rem;
+            @media screen and (max-width: 1440px){
+                height:7.75rem;
+            }
+            @media screen and (max-width: 1201px){
+                height:7.5rem;
+            }
+            @media screen and (max-width: 1025px){
+                height:6.5rem;
+            }
             @media screen and (max-width: 376px){
-                height:var(--gutter-lg);
+                height:4rem;
             }
         }
     }
@@ -85,7 +105,17 @@ const HeroStyled = styled.section`
         padding:0;
         color: ${( {theme} ) => theme.neutralForegroundInverted1};
         font-family:var(--theme-font-secondary);
-        font-size:var(--font-lg);
+        font-size:1.75rem;
+        @media screen and (max-width: 1440px){
+            font-size:var(--font-lg);
+        }
+        @media screen and (max-width: 1201px){
+            margin:-20px 0 0;
+            font-size:1.25rem;
+        }
+        @media screen and (max-width: 1025px){
+            font-size:1.1rem;
+        }
         text-transform:uppercase;
     }
 `;
