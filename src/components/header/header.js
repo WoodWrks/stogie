@@ -90,6 +90,7 @@ const Header = () => {
             <NavStyled>
                 <ul>
                     <li>
+                        <a href="https://shop.gotschops.com">Shop</a>
                         <a href="#about">About</a>
                     </li>
                 </ul>
