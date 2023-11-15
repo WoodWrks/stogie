@@ -89,8 +89,8 @@ const Header = () => {
             </LogoStyled>
             <NavStyled>
                 <ul>
+                    <li><a href="https://shop.gotschops.com">Shop</a></li>
                     <li>
-                        <a href="https://shop.gotschops.com">Shop</a>
                         <a href="#about">About</a>
                     </li>
                 </ul>
