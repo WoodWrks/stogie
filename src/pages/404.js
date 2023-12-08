@@ -11,9 +11,9 @@ const NotFoundPage = () => {
   return (
     <Layout className="layout">
       <Head />
-    <main>
-      <h1>Page not found</h1>
-    </main>
+      <main>
+        <h1>Page not found</h1>
+      </main>
     /</Layout>
   )
 }
