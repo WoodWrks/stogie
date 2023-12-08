@@ -5,6 +5,7 @@ import Lenis from "@studio-freight/lenis";
 import lightTheme from "../../themes/lightTheme";
 import Header from "../../components/header";
 import Footer from "../footer";
+import Head from "../seo/seo";
 
 const LayoutStyled = styled.div`
   background: ${({theme}) => theme.neutralBackgroundInverted2};
@@ -41,6 +42,7 @@ const Layout = (props) => {
 
   return (
     <ThemeProvider theme={lightTheme}>
+      <Head/>
       <GlobalFonts />
       <GlobalVars />
       <GlobalStyles />

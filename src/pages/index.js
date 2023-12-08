@@ -9,11 +9,18 @@ import Product from '../templates/product';
 import About from '../templates/about';
 import Quote from '../templates/quote';
 import Contact from '../templates/contact';
+import SEO from '../templates/seo';
+
+
+export const Head = () => (
+  <SEO></SEO>
+)
 
 const IndexPage = () => {
 
   return (
     <Layout className="layout">
+      <Head />
       <Hero />
       <Intro />
       <Product />
